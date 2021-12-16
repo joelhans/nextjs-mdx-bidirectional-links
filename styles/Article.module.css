@@ -1,0 +1,57 @@
+.article {
+  width: 100%;
+}
+
+.title {
+  margin-top: 0;
+  line-height: 1.15;
+  font-size: 3rem;
+}
+
+.article a {
+  color: #20b2aa;
+  font-weight: 700;
+}
+
+.article a:hover {
+  color: #4682b4;
+}
+
+.refs {
+  background: rgba(70,130,180,0.05);
+  padding: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.refs h2 {
+  margin-top: 0;
+}
+
+.refGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.ref {
+  padding: 1rem;
+  background: white;
+  border: 1px solid #EFEFEF;
+}
+
+.ref:hover h3 {
+  color: #4682b4;
+}
+
+.ref h3 {
+  font-size: 1.2rem;
+  color: #20b2aa;
+}
+
+.back a {
+  color: #20b2aa;
+  font-weight: 700;
+}

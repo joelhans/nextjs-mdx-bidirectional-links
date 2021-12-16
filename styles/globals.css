@@ -14,3 +14,14 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}

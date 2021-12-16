@@ -1,8 +1,9 @@
 import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
+import Link from 'next/link'
 
 export const MDXComponents = {
-
+  a: Link,
 }
 
 export const MDXLayoutRenderer = ({ mdxSource, ...rest }) => {

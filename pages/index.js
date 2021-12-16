@@ -18,18 +18,17 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className="main">
         <h1 className={styles.title}>
           Next.js meets bidirectional links!
         </h1>
 
         <p className={styles.description}>
           This is a demonstration of bidirectional linking between MDX-based blog posts in a Next.js blog.
-          <br />
+          <br /><br />
           Click on any of the example articles below to see the bidirectional links in action.
         </p>
 
-        <h2>Our articles:</h2>
         <div className={styles.grid}>
           {posts.map((frontMatter) => {
             const { slug, title } = frontMatter
@@ -44,6 +43,17 @@ export default function Home({ posts }) {
             )
           })}
         </div>
+
+        <p className={styles.description}>
+          Check out the{' '}
+            <Link href="https://github.com/joelhans/nextjs-mdx-bidirectional-links">
+              <a className={styles.project}>
+                GitHub project
+              </a>
+            </Link>
+          {' '}for more information!
+        </p>
+
       </main>
     </div>
   )
