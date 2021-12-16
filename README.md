@@ -3,7 +3,7 @@
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fjoelhans)](https://twitter.com/joelhans)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/joelhans/nextjs-mdx-bidirectional-links)
 
-This is an experiment in implementing bi-directional links on a Next.js-powered blog. It 
+This is an experiment in implementing bi-directional links on a Next.js-powered blog.
 
 The Next.js architecture that runs the blog functionality is very bare-bones, by design, to highlight how bi-directional
 are collected, stored, and rendered in the blog post templates.
@@ -32,7 +32,7 @@ Research, Logseq, and others, but they don't appear very often on the web.
 
 You know, where they began.
 
-I first explored this implementation on my [personal website](https://joelhans.com), to great success! The only fault in
+I first explored this implementation on my [personal website](https://joelhans.com) to great success! The only fault in
 the process I've built is that I need to write more articles to really flex the functionality.
 
 I now believe believe that *every* blog&mdash;and *especially* documentation site&mdash;should include some
@@ -59,8 +59,11 @@ Add new articles or edit existing links. Next, build the site (which updates the
 ```
 yarn build && yarn start
 # or 
-npm build && npm start
+npm run build && npm run start
 ```
+
+Now that you've run `next build` (via `yarn build` or `npm build`), you can run the site in development mode and see the
+most up-to-date bi-directional links.
 
 ## Add bi-directional links to your existing Next.js blog
 
@@ -82,17 +85,17 @@ More information coming soon!
 
 In theory, you *could* fork this repository and use it as the framework for a new, customized Next.js-based blog.
 
-> I wouldn't recommend this! Instead, start with the
-> [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog), which is a far more
-> powerful starter template for blogging, and follow the instructions in the [Add bi-directional links to your existing
-> Next.js blog](#using-the-tailwind-nextjs-starter-blog-template) section to add in bi-directional links.
+I wouldn't recommend this! Instead, start with the
+[timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog), which is a far more
+powerful starter template for blogging, and follow the instructions in the [Add bi-directional links to your existing
+Next.js blog](#using-the-tailwind-nextjs-starter-blog-template) section to add in bi-directional links.
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
+# or
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
