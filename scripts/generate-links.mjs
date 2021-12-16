@@ -75,6 +75,6 @@ const root = process.cwd()
     })
   )
 
-  // Write the `Links` to a JSON file to be loaded as data and rendered.
-  fs.writeFileSync('./data/links.json', JSON.stringify(Links, null, 1))
+  // Write `Links` to a JSON file to be loaded as data and rendered.
+  fs.writeFileSync('./data/linkData.json', JSON.stringify(Links, null, 1))
 })()

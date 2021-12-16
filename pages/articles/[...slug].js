@@ -4,7 +4,7 @@ import { getFrontMatter, getSingleContent } from '@lib/mdx'
 import { MDXLayoutRenderer } from '@components/MDXComponents'
 import styles from '../../styles/Article.module.css'
 
-import LinkData from '@data/links.json'
+import LinkData from '@data/linkData.json'
 
 export async function getStaticPaths() {
   const posts = await getFrontMatter('./content/articles')
@@ -52,7 +52,7 @@ export default function Article({ content }) {
             <MDXLayoutRenderer mdxSource={mdxSource} frontMatter={frontMatter} />
           </article>
           <div className={styles.refs}>
-            <h2>Linked references: {Refs.length}</h2>
+            <h2>Links to this page: {Refs.length}</h2>
             <div className={styles.refGrid}>
               {Refs.length ? (
                 Refs.map((link) => {
@@ -73,7 +73,7 @@ export default function Article({ content }) {
                 })
               ) : (
                 <p className="text-sm text-gray-500 !-mt-4 !m-0">
-                  No linked references found.
+                  No links to this page found.
                 </p>
               )}
             </div>
