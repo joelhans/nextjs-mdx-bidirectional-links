@@ -4,6 +4,8 @@ import { getFrontMatter, getSingleContent } from '@lib/mdx'
 import { MDXLayoutRenderer } from '@components/MDXComponents'
 import styles from '../../styles/Home.module.css'
 
+import LinkData from '@data/links.json'
+
 export async function getStaticPaths() {
   const posts = await getFrontMatter('./content/articles')
   const paths = posts.map(({ slug }) => ({
@@ -31,6 +33,10 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function Article({ content }) {
   const { mdxSource, frontMatter } = content
+  const { slug } = frontMatter
+
+  // Filter `LinkData` to only the links that reference this page as the destination.
+  const LinkRefs = LinkData.filter((link) => link.dest.includes(slug))
 
   return (
     <>
@@ -44,6 +50,34 @@ export default function Article({ content }) {
         <article>
           <MDXLayoutRenderer mdxSource={mdxSource} frontMatter={frontMatter} />
         </article>
+        <div className={``}>
+          <p className={``}>Linked references</p>
+          <div className={``}>
+            {LinkRefs.length ? (
+              LinkRefs.map((link) => {
+                const { src, title, text } = link
+                return (
+                  <Link
+                    key={src}
+                    href={src}
+                    className={``}
+                  >
+                    <a>
+                      <span className={``}>{title}</span>
+                      <span className={``}>
+                        {text}
+                      </span>
+                    </a>
+                  </Link>
+                )
+              })
+            ) : (
+              <p className="text-sm text-gray-500 !-mt-4 !m-0">
+                No linked references found.
+              </p>
+            )}
+          </div>
+        </div>
         <footer>
           Head back{' '}
           <Link href="/">
