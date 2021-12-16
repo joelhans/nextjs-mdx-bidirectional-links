@@ -13,7 +13,7 @@ are collected, stored, and rendered in the blog post templates.
 Check out the documentation below for details on the implementation and how you can add bi-directional links to your
 Next.js-powered blog.
 
-[**See a demo!**](https://nextjs-mdx-bidirectional-links-o3gv25xq1-joelhans.vercel.app/)
+[**See a demo!**](https://nextjs-mdx-bidirectional-links.vercel.app/)
 
 ## Motivation
 
