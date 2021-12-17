@@ -25,14 +25,24 @@ const root = process.cwd()
                   // _should_ indicate that we're working with an internal link
                   // between two posts.
                   if (node.tagName === 'a' && node.properties.href.startsWith('/')) {
-                    // Get the text of the parent element as best as possible, returning
+                    // Get the text of the parent element as best as possible,
+                    // then mapping through each of its children to concatenate
+                    // their values.
                     const text = parent.children.map((child) => {
                       let values
-                      const safes = ['a', 'em', 'strong', 'code']
+                      const safes = ['em', 'strong', 'code']
 
                       // Text children, which are the easiest to get the value from.
-                      if (child.type === 'text' && child.value.length > 0) {
+                      if (child.type === 'text') {
                         values = child.value
+                      }
+
+                      // Link children, which we want to capture and bold-ify.
+                      else if (
+                        child.tagName === 'a' &&
+                        child.children[0].value.length > 0
+                      ) {
+                        values = `<strong>${child.children[0].value}</strong>`
                       }
 
                       // "safe" children, which reliably have a single `text`
@@ -50,6 +60,7 @@ const root = process.cwd()
                       // matched above so that we can identify better ways to
                       // get all the parent text cleanly.
                       else {
+                        console.log(child)
                         values = '~~~'
                       }
 

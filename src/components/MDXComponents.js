@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { getMDXComponent } from 'mdx-bundler/client'
+import { getMDXComponent, getMDXExport } from 'mdx-bundler/client'
 import Link from 'next/link'
 
 export const MDXComponents = {

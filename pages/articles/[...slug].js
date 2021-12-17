@@ -64,9 +64,7 @@ export default function Article({ content }) {
                     >
                       <a className={styles.ref}>
                         <h3 className={styles.refTitle}>{title}</h3>
-                        <p className={``}>
-                          {text}
-                        </p>
+                        <p dangerouslySetInnerHTML={{__html: text}} />
                       </a>
                     </Link>
                   )
